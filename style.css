@@ -57,12 +57,14 @@ header {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    justify-content: center;
 }
 
 .card {
     padding: 32px 23px;
     text-align: center;
-
+    gap: 16px;
+    border-radius: 6px;
     background: var(--card-bg);
     border-bottom: 2px solid var(--card-primary);
 }
@@ -126,13 +128,13 @@ header {
 
 .card {
     opacity: 0;
-    animation: appear .2s forwards;
+    animation: appear 0.9s forwards;
 }
 
 
 @keyframes appear {
     0% {
-        transform: translateX(-5px);
+        transform: translateX(200px);
         opacity: 0;
     }
     100%{
@@ -142,8 +144,53 @@ header {
 
 @media (min-width: 700px) {
     #cards {
-        max-width: 670px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: fit-content;
         flex-direction: row;
         flex-wrap: wrap;
+        align-items: flex-start;
     }
+}
+
+
+
+body,
+body .card,
+body .card h2 {
+    transition: background 0.5s ease-in-out, border-bottom 0.5s ease;
+}
+
+.selectColor .colors {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    top: 10px;
+    left: 10px;
+    height: 100%;
+}
+
+.selectColor .colors div {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+.selectColor .colors div[select] {
+    border: 2px solid white;
+}
+
+.selectColor .colors div {
+    background-color: #f7dd43;
+}
+
+.selectColor .colors div.blue {
+    background-color: #4f43f7;
+}
+
+.selectColor .colors div.green {
+    background-color: #49f743;
 }

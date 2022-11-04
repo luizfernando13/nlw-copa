@@ -194,3 +194,16 @@ body .card h2 {
 .selectColor .colors div.green {
     background-color: #49f743;
 }
+
+@media (max-width: 400px) {
+    .selectColor .colors {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: top;
+        gap: 10px;
+        top: 10px;
+        left: 10px;
+        height: 10%;
+    }
+}
